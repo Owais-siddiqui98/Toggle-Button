@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark {
+            background-color: black;
+            color: white;
+        }
+
+        .light {
+            background-color: white;
+            color: black;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px;
+            font-size: large;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Practice Question</h1>
+        <h3>Create an toggler button that changes the screen to dark-mode when clicked & white-mode when clicked again.
+        </h3>
+        <button id="mode">Mode Change</button>
+        <p>Welcome to my website</p>
+    </div>
+    <script>
+
+        let modeBtn = document.querySelector("#mode");
+        let body = document.querySelector("body");
+        let currentMode = "Light";
+
+        modeBtn.addEventListener("click", () => {
+            if (currentMode === "Light") {
+                currentMode = "Dark";
+                body.classList.add("dark");
+                body.classList.remove("light");
+
+            }
+            else {
+                currentMode = "Light";
+                body.classList.add("light");
+                body.classList.remove("dark");
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
